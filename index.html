@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Strivers A2Z DSA Course/Sheet</title>
   <style>
     body {
@@ -9,17 +10,19 @@
       background-color: #f4f4f9;
       color: #333;
       padding: 20px;
+      margin: 0;
     }
 
     h1 {
       color: #1e90ff;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
     }
 
-    h2, h3 {
-      color: #2c3e50;
-      margin-top: 20px;
+    h2 {
+      font-size: 1.3rem;
+      margin: 20px 0 10px;
     }
 
     p {
@@ -30,6 +33,7 @@
     a {
       color: #1e90ff;
       text-decoration: none;
+      word-break: break-word;
     }
 
     a:hover {
@@ -39,16 +43,18 @@
     .dropdown-container {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
+      gap: 15px;
+      margin-bottom: 25px;
       flex-wrap: wrap;
     }
 
-    select {
+    .dropdown-container select {
       padding: 10px;
-      font-size: 16px;
+      font-size: 1rem;
       border-radius: 5px;
       border: 1px solid #ccc;
+      max-width: 250px;
+      width: 100%;
     }
 
     .collapsible-header {
@@ -56,11 +62,12 @@
       align-items: center;
       cursor: pointer;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 1.1rem;
+      padding: 10px 0 5px;
     }
 
     .arrow {
-      margin-right: 8px;
+      margin-right: 10px;
       transition: transform 0.3s;
     }
 
@@ -70,7 +77,28 @@
 
     .content {
       display: none;
-      margin-top: 5px;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      .collapsible-header {
+        font-size: 1rem;
+      }
+
+      .dropdown-container {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -78,7 +106,7 @@
 
   <h1>Strivers A2Z DSA Course/Sheet</h1>
 
-  
+  <!-- Step Dropdown -->
   <div class="dropdown-container">
     <div>
       <label for="step-select">Jump to Step:</label><br>
@@ -89,10 +117,10 @@
     </div>
   </div>
 
-
+  <!-- Step 1 Section -->
   <h2 id="step1">Step 1: Learn the Basics</h2>
 
-
+  <!-- Lecture 1 -->
   <div class="collapsible-header" onclick="toggleContent(this)">
     <span class="arrow">▶</span> Lec 1: Things to Know in C++/Java/Python or any Language
   </div>
@@ -135,7 +163,7 @@
     <p>Check for Prime: <a href="https://www.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1" target="_blank">Minimum Jumps</a></p>
   </div>
 
-
+  <!-- JavaScript -->
   <script>
     function scrollToSection(sectionId) {
       if (sectionId) {
