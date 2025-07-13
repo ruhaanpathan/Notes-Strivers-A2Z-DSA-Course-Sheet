@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Strivers A2Z DSA Course/Sheet</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
+      background: #f9f9f9;
       color: #333;
       padding: 20px;
       margin: 0;
     }
 
     h1 {
-      color: #1e90ff;
+      color: #007bff;
       text-align: center;
+      font-size: 1.8rem;
       margin-bottom: 20px;
-      font-size: 1.6rem;
     }
 
     h2 {
-      font-size: 1.3rem;
-      margin: 20px 0 10px;
-    }
-
-    p {
-      margin-left: 20px;
-      line-height: 1.6;
+      font-size: 1.4rem;
+      margin-top: 40px;
     }
 
     a {
-      color: #1e90ff;
+      color: #007bff;
       text-decoration: none;
       word-break: break-word;
     }
@@ -40,64 +35,60 @@
       text-decoration: underline;
     }
 
-    .dropdown-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 25px;
-      flex-wrap: wrap;
-    }
-
-    .dropdown-container select {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      max-width: 250px;
-      width: 100%;
-    }
-
     .collapsible-header {
-      display: flex;
-      align-items: center;
       cursor: pointer;
       font-weight: bold;
       font-size: 1.1rem;
-      padding: 10px 0 5px;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
     }
 
     .arrow {
-      margin-right: 10px;
-      transition: transform 0.3s;
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.3s ease;
     }
 
-    .arrow.rotate {
+    .rotate {
       transform: rotate(90deg);
     }
 
     .content {
       display: none;
-      padding-left: 20px;
-      margin-bottom: 10px;
+      margin-left: 20px;
+      margin-bottom: 20px;
     }
 
-    /* Responsive adjustments */
+    .dropdown-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    select {
+      padding: 8px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 90%;
+      max-width: 300px;
+    }
+
     @media (max-width: 600px) {
       h1 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       h2 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
 
       .collapsible-header {
         font-size: 1rem;
       }
 
-      .dropdown-container {
-        flex-direction: column;
-        align-items: center;
+      select {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -106,77 +97,104 @@
 
   <h1>Strivers A2Z DSA Course/Sheet</h1>
 
-  <!-- Step Dropdown -->
+  <!-- Dropdown to jump to step -->
   <div class="dropdown-container">
-    <div>
-      <label for="step-select">Jump to Step:</label><br>
-      <select id="step-select" onchange="scrollToSection(this.value)">
-        <option value="">-- Select Step --</option>
-        <option value="step1">Step 1: Learn the Basics</option>
-      </select>
-    </div>
+    <label for="step-select">Jump to Step:</label><br>
+    <select id="step-select" onchange="scrollToStep(this.value)">
+      <option value="">-- Select Step --</option>
+      <option value="step1">Step 1: Learn the Basics</option>
+      <option value="step2">Step 2: Learn Important Sorting Techniques</option>
+      <option value="step3">Step 3: Solve Array Problems</option>
+    </select>
   </div>
 
-  <!-- Step 1 Section -->
+  <!-- Step 1 -->
   <h2 id="step1">Step 1: Learn the Basics</h2>
 
-  <!-- Lecture 1 -->
   <div class="collapsible-header" onclick="toggleContent(this)">
     <span class="arrow">▶</span> Lec 1: Things to Know in C++/Java/Python or any Language
   </div>
   <div class="content">
-    <p>User Input / Output: <a href="https://www.geeksforgeeks.org/problems/search-query-auto-complete/0" target="_blank">Search Query Auto Complete</a></p>
-    <p>If Else statements: <a href="https://www.geeksforgeeks.org/problems/java-if-else-decision-making0924/0" target="_blank">Decision Making</a></p>
-    <p>Switch Statement: <a href="https://www.geeksforgeeks.org/problems/java-switch-case-statement3529/1" target="_blank">Switch Case statement</a></p>
-    <p>For loops: <a href="https://www.naukri.com/code360/problems/nth-fibonacci-number_74156" target="_blank">Nth Fibonacci Number</a></p>
-    <p>While Loop: <a href="https://www.geeksforgeeks.org/problems/while-loop-printtable-java/1" target="_blank">While loop - Print Table</a></p>
-    <p>Functions: <a href="https://www.geeksforgeeks.org/problems/pass-by-reference-and-value/1" target="_blank">Pass by Reference and Value</a></p>
-    <p>Time Complexity: <a href="https://www.youtube.com/watch?v=FPu9Uld7W-E" target="_blank">Time & Space Complexity - Video</a></p>
+    <p>User Input / Output: <a href="https://www.geeksforgeeks.org/problems/search-query-auto-complete/0">Search Query Auto Complete</a></p>
+    <p>If Else statements: <a href="https://www.geeksforgeeks.org/problems/java-if-else-decision-making0924/0">Decision Making</a></p>
+    <p>Switch Statement: <a href="https://www.geeksforgeeks.org/problems/java-switch-case-statement3529/1">Switch Case statement</a></p>
+    <p>For loops: <a href="https://www.naukri.com/code360/problems/nth-fibonacci-number_74156">Nth Fibonacci Number</a></p>
+    <p>While Loop: <a href="https://www.geeksforgeeks.org/problems/while-loop-printtable-java/1">While loop - printTable</a></p>
+    <p>Functions: <a href="https://www.geeksforgeeks.org/problems/pass-by-reference-and-value/1">Pass by Reference and Value</a></p>
+    <p>Time Complexity: <a href="https://www.youtube.com/watch?v=FPu9Uld7W-E">Time & Space Complexity Video</a></p>
   </div>
 
-  <!-- Lecture 2 -->
   <div class="collapsible-header" onclick="toggleContent(this)">
     <span class="arrow">▶</span> Lec 2: Build-up Logical Thinking
   </div>
   <div class="content">
-    <p>Patterns: <a href="https://www.youtube.com/watch?v=tNm_NNSB3_w" target="_blank">22 Patterns in 1 Shot - Striver</a></p>
+    <p>Patterns: <a href="https://www.youtube.com/watch?v=tNm_NNSB3_w">22 Patterns in 1 Shot</a></p>
   </div>
 
-  <!-- Lecture 3 -->
   <div class="collapsible-header" onclick="toggleContent(this)">
     <span class="arrow">▶</span> Lec 3: Learn STL/Java-Collections
   </div>
   <div class="content">
-    <p>C++ STL: <a href="https://www.youtube.com/watch?v=RRVYpIET_RU" target="_blank">Complete STL in 1 Video</a></p>
+    <p>C++ STL: <a href="https://www.youtube.com/watch?v=RRVYpIET_RU">Complete STL in 1 Video</a></p>
   </div>
 
-  <!-- Lecture 4 -->
   <div class="collapsible-header" onclick="toggleContent(this)">
     <span class="arrow">▶</span> Lec 4: Know Basic Maths
   </div>
   <div class="content">
-    <p>Count Digits: <a href="https://www.geeksforgeeks.org/problems/count-digits5716/1" target="_blank">Count Digits</a></p>
-    <p>Reverse a Number: <a href="https://leetcode.com/problems/reverse-integer/description/" target="_blank">Reverse Integer</a></p>
-    <p>Check Palindrome: <a href="https://leetcode.com/problems/valid-palindrome/description/" target="_blank">Valid Palindrome</a></p>
-    <p>GCD or HCF: <a href="https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1" target="_blank">HCF and GCD</a></p>
-    <p>Print all Divisors: <a href="https://www.geeksforgeeks.org/problems/sum-of-all-divisors-from-1-to-n4738/1" target="_blank">Sum of Divisors from 1 to N</a></p>
-    <p>Check for Prime: <a href="https://www.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1" target="_blank">Minimum Jumps</a></p>
+    <p>Count Digits: <a href="https://www.geeksforgeeks.org/problems/count-digits5716/1">Count Digits</a></p>
+    <p>Reverse a Number: <a href="https://leetcode.com/problems/reverse-integer/description/">Reverse Integer</a></p>
+    <p>Palindrome Check: <a href="https://leetcode.com/problems/valid-palindrome/description/">Valid Palindrome</a></p>
+    <p>HCF/GCD: <a href="https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1">HCF and GCD</a></p>
+    <p>Divisors Sum: <a href="https://www.geeksforgeeks.org/problems/sum-of-all-divisors-from-1-to-n4738/1">Sum 1 to n Divisors</a></p>
+    <p>Check for Prime: <a href="https://www.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1">Minimum Jumps</a></p>
   </div>
 
-  <!-- JavaScript -->
-  <script>
-    function scrollToSection(sectionId) {
-      if (sectionId) {
-        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+  <!-- Step 2 -->
+  <h2 id="step2">Step 2: Learn Important Sorting Techniques</h2>
 
+  <div class="collapsible-header" onclick="toggleContent(this)">
+    <span class="arrow">▶</span> Lec 1: Sorting - I
+  </div>
+  <div class="content">
+    <p>Selection Sort: <a href="https://www.geeksforgeeks.org/problems/selection-sort/1">Selection Sort</a></p>
+    <p>Bubble Sort: <a href="https://www.geeksforgeeks.org/problems/bubble-sort/1">Bubble Sort</a></p>
+    <p>Insertion Sort: <a href="https://www.geeksforgeeks.org/problems/insertion-sort/0">Insertion Sort</a></p>
+  </div>
+
+  <div class="collapsible-header" onclick="toggleContent(this)">
+    <span class="arrow">▶</span> Lec 2: Sorting - II
+  </div>
+  <div class="content">
+    <p>Merge Sort: <a href="https://practice.geeksforgeeks.org/problems/merge-sort/1">Merge Sort</a></p>
+    <p>Recursive Bubble Sort: <a href="https://www.geeksforgeeks.org/problems/bubble-sort/1">Bubble Sort</a></p>
+    <p>Recursive Insertion Sort: <a href="https://www.geeksforgeeks.org/problems/insertion-sort/1">Insertion Sort</a></p>
+    <p>Quick Sort: <a href="https://practice.geeksforgeeks.org/problems/quick-sort/1">Quick Sort</a></p>
+  </div>
+
+  <!-- Step 3 -->
+  <h2 id="step3">Step 3: Solve Problems on Arrays</h2>
+
+  <div class="collapsible-header" onclick="toggleContent(this)">
+    <span class="arrow">▶</span> Lec 1: Easy
+  </div>
+  <div class="content">
+    <p>Largest Element in Array: <a href="https://www.geeksforgeeks.org/problems/largest-element-in-array4009/0">Largest Element</a></p>
+  </div>
+
+  <script>
     function toggleContent(header) {
       const arrow = header.querySelector('.arrow');
       const content = header.nextElementSibling;
+      const isOpen = content.style.display === 'block';
+      content.style.display = isOpen ? 'none' : 'block';
+      arrow.classList.toggle('rotate', !isOpen);
+    }
 
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-      arrow.classList.toggle('rotate');
+    function scrollToStep(stepId) {
+      if (stepId) {
+        document.getElementById(stepId).scrollIntoView({ behavior: 'smooth' });
+      }
     }
   </script>
 
